@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VJ Festival Zürich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!--
+  ============================================================
+  SCHRIFTEN – WICHTIG, BITTE LESEN
+  ============================================================
+  Du wolltest «Piepie» (Headlines) und «Acumin Pro Light» (Fliesstext).
+  Beides sind KEINE Google Fonts – ich kann sie nicht per einfachem
+  Google-Fonts-Link einbinden. Gute Nachricht: BEIDE Schriften sind
+  auf Adobe Fonts verfügbar, und du hast laut unserem Gespräch
+  Adobe Creative Cloud. So bindest du sie in 5 Minuten ein:
+
+  1. Gehe auf https://fonts.adobe.com und logge dich mit deinem
+     Adobe-Konto ein.
+  2. Suche "Piepie" (von Dharma Type) und "Acumin Pro" (von Adobe).
+  3. Klicke bei beiden auf "Add to Web Project" → neues Web-Projekt
+     erstellen, z.B. "VJ Festival Zürich".
+  4. Bei Acumin Pro nur den Schnitt "Light" aktivieren (spart Ladezeit).
+  5. Adobe zeigt dir danach einen Embed-Code, der so aussieht:
+     <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+  6. Diesen <link>-Tag fügst du GENAU HIER UNTERHALB ein (wo aktuell
+     der Platzhalter-Kommentar steht).
+  7. Adobe nennt dir auf der Projektseite auch den exakten
+     font-family-Namen (meist klein geschrieben, z.B. "piepie" und
+     "acumin-pro"). Trage diese Namen unten bei den Variablen
+     --head und --body ein (ersetze 'Piepie-PLATZHALTER' etc.).
+
+  <link rel="stylesheet" href="HIER-DEINEN-ADOBE-FONTS-KIT-LINK-EINFÜGEN">
+
+  Bis du das gemacht hast, lade ich unten übergangsweise "Fredoka"
+  von Google Fonts als sichtbaren Platzhalter – sie hat eine ähnlich
+  kräftige, plakative Anmutung wie Piepie, ist aber NICHT die
+  finale Schrift. Sobald der Adobe-Fonts-Link drin ist, kannst du
+  die Fredoka-Zeile unten einfach löschen.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/ydb7hdd.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--
+  ============================================================
+  AUFBAU DIESER SEITE
+  ============================================================
+  Die Seite besteht aus einem <header> (Navigation, oben fixiert)
+  und mehreren <section id="..."> Blöcken darunter. Jede Sektion
+  hat eine ID (z.B. id="lineup"), auf die im Menü oben per
+  href="#lineup" verlinkt wird – das sind die "Anchor Links".
+
+  Reihenfolge der Sektionen = Reihenfolge im Menü:
+  Home → Lineup → Tickets → Trailer → Programm → (Festivalgelände) → Infos → (Plakat)
+  Festivalgelände und Plakat haben absichtlich keinen eigenen
+  Menüpunkt, tauchen aber trotzdem an sinnvoller Stelle auf der
+  Seite auf.
+
+  PLATZHALTER erkennst du an: gestricheltem Rahmen + grauem Text
+  (z.B. "Logo", "Foto Areal 1", "Video-Platzhalter"). Genau darüber
+  steht jeweils ein Kommentar, WIE du sie durch echte Bilder/Videos
+  ersetzt.
+  ============================================================
+-->
+
+  <header class="nav">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+    <div class="nav-inner">
+      <!-- Logo-Bild: ersetze das div unten durch
+           <img src="pfad/zum/logo.svg" alt="VJ Festival Zürich" style="height:40px;"> -->
+      <div class="logo-row">
+           <img src="../assets/Final_Logo.png" alt="VJ Festival Zürich" style="height:40px;"> 
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#lineup">Lineup</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#programm">Programm</a>
+        <a href="#infos">Infos</a>
+      </nav>
+      <label for="menu-toggle" class="menu-icon"><span></span><span></span><span></span></label>
+    </div>
+    <div class="mobile-menu-panel">
+      <a class="link" href="#home">Home</a>
+      <a class="link" href="#lineup">Lineup</a>
+      <a class="link" href="#tickets">Tickets</a>
+      <a class="link" href="#trailer">Trailer</a>
+      <a class="link" href="#programm">Programm</a>
+      <a class="link" href="#infos">Infos</a>
+      <a class="btn btn-white" href="#tickets">Tickets sichern</a>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">VJ FESTIVAL ZÜRICH</div>
+      <h1 class="title">GET READY FOR<br><span class="ghost">LIGHTS IN THE</span> <span class="highlight">NIGHT</span></h1>
+      <div class="meta">Donnerstag 26.11.2026 – Samstag 28.11.2026<br>18:00 – 23:00</div>
+      <div class="hero-ctas">
+        <a class="btn btn-white" href="#tickets">Tickets sichern</a>
+        <a class="btn btn-cta" href="#trailer">Trailer ansehen</a>
+      </div>
+    </div>
+  </section>
+<!-- Line-Up: bewusst OHNE Fotos, nur Name + Wohnort auf Farbfläche. -->
+<section id="lineup">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-dark">Acts</div>
+        <h2 class="h2">Line-Up</h2>
+      </div>
+      <div class="lineup-grid">
+        <div class="vj-card"><div class="vj-tag"><div class="n">Alvaro Gomez</div><div class="w">Berlin</div><div class="thema">Sciencefiction – animierte Planeten &amp; Teilchen aus dem Weltraum</div></div></div>
+        <div class="vj-card"><div class="vj-tag"><div class="n">Barbara Cohen</div><div class="w">Tel Aviv</div><div class="thema">Standing Man – minimalistische, langatmige Animationen</div></div></div>
+        <div class="vj-card"><div class="vj-tag"><div class="n">Frederik Larssen</div><div class="w">Schweden</div><div class="thema">Circles – Kreise, Punkte, Lichtdesign</div></div></div>
+        <div class="vj-card"><div class="vj-tag"><div class="n">Jim Bruder</div><div class="w">London</div><div class="thema">Loosing you! – produziert die Musik dazu selbst</div></div></div>
+        <div class="vj-card"><div class="vj-tag"><div class="n">Julia Derendinger</div><div class="w">Zürich</div><div class="thema">Zikaden – computergenerierte Flügelbewegungen</div></div></div>
+      </div>
+    </div>
+  </section>
+<section id="tickets" style="background:var(--panel);">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h3>Sichere dir kostenlos deinen Platz.</h3>
+          <p>Der Eintritt ist kostenlos. Mit einer Anmeldung reservierst du dein Zeitfenster und erhältst den Link zum Livestream.</p>
+        </div>
+        <a class="btn btn-cta" href="#">Kostenlos anmelden</a>
+      </div>
+    </div>
+  </section>
+<section id="trailer">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-dark">Kurzfilm</div>
+        <h2 class="h2">Der Trailer</h2>
+      </div>
+        <video width="640" height="360" controls>
+  <source src="../assets/Trailer.mp4" type="video/mp4">
+  <!--Ihr Browser unterstützt das Video-Element nicht.-->
+</video>
+      <div class="trailer-note">→ Ein Einblick auf das, was dich erwartet.</div>
+    </div>
+  </section>
+<section id="programm" style="background:var(--panel);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-dark">Programm</div>
+        <h2 class="h2">Drei Nächte, ein Festival</h2>
+      </div>
+      <div class="days">
+        <div class="day-card"><div class="d">Donnerstag - 26.11.2026</div><div class="t">18:00 – 23:00 Uhr</div></div>
+        <div class="day-card"><div class="d">Freitag - 27.11.2026</div><div class="t">18:00 – 23:00 Uhr</div></div>
+        <div class="day-card"><div class="d">Samstag - 28.11.2026</div><div class="t">18:00 – 23:00 Uhr</div></div>
+      </div>
+    </div>
+  </section>
+<section id="gelaende">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-dark">Festivalgelände</div>
+        <h2 class="h2">Fünf Standorte, ein Weg</h2>
+        <p>Wegweiser vor Ort führen dich vom Haupteingang durch das ganze Sihlcity-Areal.</p>
+      </div>
+      <div class="gelaende">
+        <div class="logo-row">
+           <img src="../assets/Lageplan_sihlcity.png" alt="<Sihlcity Lageplan>" > 
+      </div>
+        <div class="photo-grid">
+               <div class="logo-row">
+           <img src="../assets/01-sihlcity.jpg" alt="<Sihlcity Areal 1>" > 
+      </div>
+          <div class="logo-row">
+           <img src="../assets/02-sihlcity.jpeg" alt="<Sihlcity Areal 2>" > 
+      </div>
+          <div class="logo-row">
+           <img src="../assets/03-sihlcity.jpg" alt="<Sihlcity Areal 3>" > 
+      </div>
+          <div class="logo-row">
+           <img src="../assets/04-sihlcity.jpg" alt="<Sihlcity Areal 4>" > 
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="infos">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-dark">Gut zu wissen</div>
+        <h2 class="h2">Infos</h2>
+      </div>
+      <div class="infos-grid">
+        <div class="info-item"><div class="k">Ort</div><div class="v">Sihlcity, Giesshübelstrasse 15, 8045 Zürich</div></div>
+        <div class="info-item"><div class="k">Sound</div><div class="v">Livestream über die Website – eigene Kopfhörer mitbringen</div></div>
+        <div class="info-item"><div class="k">Eintritt</div><div class="v">Kostenlos und öffentlich zugänglich</div></div>
+      </div>
+    </div>
+  </section>
+<!-- Plakat: fügst du selbst ein, sobald dein finales Design steht.
+     Ersetze dazu einfach das ganze <div class="plakat-box">...</div>
+     durch: <img class="plakat-box" src="plakat.jpg" alt="VJ Festival Zürich Plakat"> -->
+<section id="plakat" style="background:var(--panel);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow-dark">Plakat</div>
+        <h2 class="h2">Das Plakat</h2>
+        <p>F200 Cityformat – zu finden an den fünf Standorten und im Stadtgebiet Zürich.</p>
+      </div>
+      <div class="plakat-wrap">
+        <div class="plakat-box">Plakat-Platzhalter<br>(F200, 116.5 × 170 cm)</div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="logo" style="font-family:piepie;">VJ Festival Zürich</div>
+        <!-- Partner-Logos: 3 Platzhalter, je durch <img src="..."> ersetzen -->
+        <div class="partners">
+    </div>
+               <div class="logo-row">
+           <img src="../assets/Stadt zürich.png" alt="<Stadt Zürich>" style="height:35px;"> 
+      </div>
+      <div class="logo-row">
+<img src="../assets/Kaufleute.png" alt="<Kaufleuten>" style="height:30px;"> 
+      </div>
+            <div class="logo-row">
+<img src="../assets/sihlcity.png" alt="<Sihlcity>" style="height:40px;"> 
+          <!--<span class="partner-logo">Logo Stadt Zürich</span>
+          <span class="partner-logo">Logo Kaufleuten</span> 
+          <span class="partner-logo">Logo Sihlcity</span>
+  -->
+        </div>
+          
+      </div>
+      <div class="foot-bottom">
+        <span> 2026 VJ Festival Zürich</span>
+        <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">Kontakt</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-outline" href="#trailer">Trailer</a>
+    <a class="btn btn-white" href="#tickets">Tickets sichern</a>
+  </div>
+
+</body>
+</html>
