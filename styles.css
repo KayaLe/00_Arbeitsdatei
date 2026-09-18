@@ -231,7 +231,7 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
    ============================================================ */
 .plakat-wrap { display: flex; justify-content: center; }
 .plakat-box {
-  width: 100%; max-width: 320px; aspect-ratio: 0.685/1;
+  width: 100%; max-width: 250px; aspect-ratio: 0.685/1;
   border: 2px dashed rgba(var(--text-light-rgb), 0.35); border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   text-align: center; font-size: 15px; padding: 24px;
