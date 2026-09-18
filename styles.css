@@ -1,9 +1,4 @@
-/* ============================================================
-   FARBEN – deine 5 Brand-Farben (+ 1 zweiter Dunkelton für Flächen)
-   Jede Farbe wird NUR hier definiert. Überall sonst im Code steht
-   nur noch var(--name) – so änderst du eine Farbe an EINER Stelle
-   und sie ändert sich automatisch auf der ganzen Seite.
-   ============================================================ */
+
 :root {
   --bg-dark:    #0B1F2A;  
   --panel:      #10222C;  
@@ -13,17 +8,7 @@
   --text-light: #F4F1FA; 
   --text-light-rgb: 244, 241, 250;
 
-  /* ------------------------------------------------------------
-     SCHRIFTEN – siehe ausführliche Anleitung ganz oben in der
-     landingpage.html (im <head>-Kommentar). Kurzfassung:
-     1. fonts.adobe.com öffnen, mit deinem Adobe-Konto einloggen
-     2. "Piepie" und "Acumin Pro" suchen, je zu einem Web Project hinzufügen
-     3. Bei Acumin Pro den Schnitt "Light" aktivieren
-     4. Den <link>-Code, den Adobe dir zeigt, in landingpage.html einfügen
-     5. Die zwei Platzhalter-Namen unten durch die ECHTEN Namen ersetzen,
-        die dir Adobe Fonts auf der Projekt-Seite anzeigt (steht dort bei
-        jeder Schrift unter "CSS", meist klein geschrieben, z.B. "piepie")
-     ------------------------------------------------------------ */
+
   --head: 'piepie', 'Fredoka', 'Arial Rounded MT Bold', sans-serif;
   --body: 'acumin-pro', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -34,14 +19,10 @@ a { color: inherit; text-decoration: none; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
 img { display: block; max-width: 100%; }
 
-/* Gedämpfter Text (Untertitel, Meta-Infos): dieselbe Textfarbe wie
-   überall, nur mit 60% Deckkraft – dadurch brauchen wir keine
-   eigene graue Farbe. */
+
 .muted { color: rgba(var(--text-light-rgb), 0.6); }
 
-/* ============================================================
-   NAVIGATION
-   ============================================================ */
+
 header.nav { position: sticky; top: 0; z-index: 50; background: var(--bg-dark); }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -50,9 +31,7 @@ header.nav { position: sticky; top: 0; z-index: 50; background: var(--bg-dark); 
 .logo { font-family: var(--head); font-weight: 700; font-size: 19px; line-height: 1.05; }
 
 .nav-links { display: flex; align-items: center; gap: 34px; }
-/* Jeder Link bekommt eine kleine Unterstreichung (::after), die per
-   CSS-Transition beim Hover von 0 auf 100% Breite animiert. Das ist
-   der "Hover-Effekt" für die Navigation. */
+
 .nav-links a {
   position: relative;
   font-family: var(--body); font-size: 15px; font-weight: 400;
@@ -67,11 +46,9 @@ header.nav { position: sticky; top: 0; z-index: 50; background: var(--bg-dark); 
 }
 .nav-links a:hover { opacity: 1; color: var(--green); }
 .nav-links a:hover::after { width: 100%; }
-.nav-links a:active { color: var(--magenta); } /* kurzer Farbwechsel beim Klicken */
+.nav-links a:active { color: var(--magenta); } 
 
-/* ============================================================
-   BUTTONS – mit Hover- (Maus drüber) und Active-Effekt (beim Klick)
-   ============================================================ */
+
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--body); font-weight: 600; font-size: 15px;
@@ -84,15 +61,13 @@ header.nav { position: sticky; top: 0; z-index: 50; background: var(--bg-dark); 
 .btn-white { background: var(--text-light); color: var(--bg-dark); }
 .btn-white:hover { background: var(--green); }
 
-.btn-cta { background: var(--green); color: var(--bg-dark); } /* Magenta = Highlights & CTAs */
+.btn-cta { background: var(--green); color: var(--bg-dark); } 
 .btn-cta:hover { background: var(--amber); color: var(--text-light); }
 
 .btn-outline { border: 1.5px solid var(--text-light); color: var(--text-light); background: transparent; }
 .btn-outline:hover { background: var(--text-light); color: var(--bg-dark); }
 
-/* ============================================================
-   HERO
-   ============================================================ */
+
 .hero {
   background: linear-gradient(135deg, var(--magenta) 0%, var(--amber) 55%, var(--green) 100%);
   padding-bottom: 90px;
@@ -111,9 +86,7 @@ h1.title .ghost { opacity: 0.45; }
 }
 .hero-ctas { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
 
-/* ============================================================
-   SECTION – gemeinsame Regeln für alle Abschnitte
-   ============================================================ */
+
 section { padding: 90px 0; }
 .section-head { margin-bottom: 40px; max-width: 620px; }
 .eyebrow-dark { font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--amber); margin-bottom: 10px; }
@@ -122,24 +95,7 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
 /*"acumin-pro", sans-serif;
 "piepie", sans-serif;*/
 
-/* ============================================================
-   TRAILER / VIDEO-PLATZHALTER
-   ------------------------------------------------------------
-   Genau wie bei den Foto-Platzhaltern (siehe weiter unten) ersetzt
-   du diesen Block später durch ein echtes Video. Zwei Varianten:
 
-   A) Selbst gehostetes Video-File:
-      <video class="trailer-box" controls poster="vorschaubild.jpg">
-        <source src="trailer.mp4" type="video/mp4">
-      </video>
-
-   B) YouTube/Vimeo-Embed (meist einfacher, kein grosser Datei-Upload nötig):
-      <iframe class="trailer-box" src="https://www.youtube.com/embed/DEINE-VIDEO-ID"
-        frameborder="0" allowfullscreen></iframe>
-
-   In beiden Fällen ersetzt das neue Element einfach das ganze
-   <div class="trailer-box">...</div> von oben bis unten.
-   ============================================================ */
 .trailer-box {
   background: transparent; border: 2px dashed rgba(var(--text-light-rgb), 0.35); border-radius: 22px; max-width: 720px;
   aspect-ratio: 16/9; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
@@ -152,9 +108,7 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
 .trailer-label { font-family: var(--head); font-weight: 600; font-size: 15px; text-align: center; }
 .trailer-label small { display: block; font-family: var(--body); font-weight: 400; font-size: 13px; margin-top: 4px; opacity: 0.8; }
 
-/* ============================================================
-   LINE-UP – bewusst ohne Fotos, dafür Name + Wohnort + Kurz-Thema
-   ============================================================ */
+
 .lineup-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
 .vj-card {
   border-radius: 16px; overflow: hidden;
@@ -166,9 +120,7 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
 .vj-tag .w { font-size: 13px; opacity: 0.85; margin-top: 3px; }
 .vj-tag .thema { font-size: 12.5px; opacity: 0.85; margin-top: 10px; line-height: 1.4; }
 
-/* ============================================================
-   LOGO-PLATZHALTER (Header)
-   ============================================================ */
+
 .logo-row { display: flex; align-items: center; gap: 12px; }
 .logo-placeholder {
   width: 44px; height: 44px; border-radius: 10px;
@@ -178,21 +130,13 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
   flex-shrink: 0;
 }
 
-/* ============================================================
-   PROGRAMM
-   ============================================================ */
+
 .days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .day-card { background: var(--magenta); border: 1px solid rgba(var(--text-light-rgb), 0.08); border-radius: 16px; padding: 28px; }
 .day-card .d { font-family: var(--body); font-weight: 600; font-size: 21px; margin-bottom: 6px; }
 .day-card .t { font-size: 15px; }
 
-/* ============================================================
-   FESTIVALGELÄNDE – Plan + Fotos, beides Platzhalter
-   ------------------------------------------------------------
-   Ersetzen durch z.B.:
-   <img class="plan-box" src="plan.jpg" alt="Parcours-Plan Sihlcity">
-   <img class="photo-box" src="areal-1.jpg" alt="Sihlcity Areal">
-   ============================================================ */
+
 .gelaende { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
 .plan-box {
   background: transparent; border: 2px dashed rgba(var(--text-light-rgb), 0.3); border-radius: 16px;
@@ -204,9 +148,7 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
   aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 14px;
 }
 
-/* ============================================================
-   TICKETS-BAND
-   ============================================================ */
+
 .cta-band {
   background: var(--magenta);
   border-radius: 24px; padding: 60px 50px;
@@ -215,20 +157,11 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
 .cta-band h3 { font-family: "piepie", sans-serif; font-weight: 700; font-size: 28px; max-width: 440px;  }
 .cta-band p { margin-top: 10px; max-width: 400px; }
 
-/* ============================================================
-   INFOS
-   ============================================================ */
+
 .infos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .info-item .k { font-family: var(--head); font-weight: 600; color: var(--amber); font-size: 16px; margin-bottom: 8px; }
 
-/* ============================================================
-   PLAKAT
-   ------------------------------------------------------------
-   Reiner Platzhalter im F200-Seitenverhältnis (116.5 × 170 cm,
-   also Breite:Höhe ≈ 0.685). Du fügst dein fertiges Plakat später
-   selbst ein, z.B.:
-   <img class="plakat-box" src="plakat.jpg" alt="VJ Festival Zürich Plakat">
-   ============================================================ */
+
 .plakat-wrap { display: flex; justify-content: center; }
 .plakat-box {
   width: 100%; max-width: 150px; aspect-ratio: 0.685/1;
@@ -237,9 +170,7 @@ h2.h2 { font-family: "piepie", sans-serif; font-weight: 700; font-size: clamp(30
   text-align: center; font-size: 15px; padding: 24px;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
+
 footer { border-top: 1px solid rgba(var(--text-light-rgb), 0.1); padding: 50px 0 36px; }
 .foot-top { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 30px; align-items: center; }
 /* Partner-Logos sind ECHTE Bilder – hier erstmal Platzhalter-Kacheln.
@@ -256,9 +187,7 @@ footer { border-top: 1px solid rgba(var(--text-light-rgb), 0.1); padding: 50px 0
 .foot-bottom a { transition: color 0.2s ease; }
 .foot-bottom a:hover { color: var(--green); }
 
-/* ============================================================
-   MOBILE-MENÜ (Basis, Details siehe Media Query weiter unten)
-   ============================================================ */
+
 .menu-icon { display: none; flex-direction: column; gap: 5px; width: 24px; cursor: pointer; }
 .menu-icon span { height: 2px; background: var(--text-light); border-radius: 2px; }
 .menu-toggle-input { display: none; }
@@ -269,7 +198,6 @@ footer { border-top: 1px solid rgba(var(--text-light-rgb), 0.1); padding: 50px 0
   .lineup-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ================= MOBILE (<= 768px) ================= */
 @media (max-width: 768px) {
   .wrap { padding: 0 22px; }
   .nav-inner { padding: 20px 22px; }
